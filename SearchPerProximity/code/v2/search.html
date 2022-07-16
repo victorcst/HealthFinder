@@ -1,0 +1,77 @@
+﻿<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Health Finder</title>
+
+    <!--=============== CSS ===============-->
+    <link href="styles.css" rel="stylesheet">
+
+    <!--=============== API ===============-->
+    <link href="https://fonts.googleapis.com/css2?family=Poppins&display=swap" rel="stylesheet">
+
+    <!--=============== GStatic ===============-->
+    <link href="https://fonts.gstatic.com" rel="preconnect">
+
+</head>
+<body>
+
+    <section class="section homepage">
+        <div class="home__container container">
+        <h1 class="section__title2">HEALTH FINDER</h1>
+        <p class="home__description">Encontre aqui o posto de saúde mais próximo</p>
+        <h3 class="home__subtitle">Origem:</h3>
+        <form action="" class="home__form">
+            <input type="text" placeholder="" class="contato__input">
+            <button class="button">
+                <i class='bx bxs-location-plus' style='color:#ffffff'></i>
+            </button>
+        </form>
+    </div>
+
+    <div id="map"></div>
+        <script>
+            function initialize() {
+
+                
+                var center = new google.maps.LatLng(-19.858809,-43.9203603);
+
+                var mapOptions = {
+                    zoom: 4,
+                    center: center,
+                    mapTypeId: google.maps.MapTypeId.ROADMAP
+                };
+
+                
+                var map = new google.maps.Map(document.getElementById("map"), mapOptions);
+
+                
+                var marker = new google.maps.Marker({
+                    position: center,
+                    map: map
+                });
+            }
+        </script>
+        <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAu3OeekB4z0EjTPCH8FTClNQGd0GgEAKo&callback=initialize" async defer>
+        </script>
+
+</section>
+
+
+    <!--=============== Places Library ===============-->
+    <script async
+    src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAu3OeekB4z0EjTPCH8FTClNQGd0GgEAKo&libraries=places&callback=initMap">
+    </script>
+
+    <!--=============== AJAX - Google APIs ===============-->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+    
+    <!--=============== jQuery ===============-->
+    <script src="Scripts/jquery-3.1.1.min.js"></script>
+
+    <!--=============== FontAwesome ===============-->
+    <script src="https://kit.fontawesome.com/ab2155e76b.js" crossorigin="anonymous"></script>
+</body>
+</html>
